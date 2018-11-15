@@ -9,7 +9,7 @@ import java.awt.event.*;
 public class MiniCalculator implements ActionListener{
     JFrame f;
     JTextField tf1, tf2;
-    JLabel l;
+    JLabel l, w;
     JButton b1, b2, b3, b4;
     public MiniCalculator(){
         f = new JFrame("Mini Calculator");
@@ -22,6 +22,9 @@ public class MiniCalculator implements ActionListener{
 
         l = new JLabel("0.00");
         l.setBounds(100, 150, 200, 40);
+
+        w = new JLabel();
+        w.setBounds(50, 350, 450, 40);
 
 
         b1 = new JButton("+");
@@ -40,29 +43,38 @@ public class MiniCalculator implements ActionListener{
         b4.setBounds(200, 250, 100, 50);
         b4.addActionListener(this);
 
-        f.add(tf1);f.add(tf2);f.add(l);f.add(b1);f.add(b2);f.add(b3);f.add(b4);
+        f.add(tf1);f.add(tf2);
+        f.add(l);f.add(w);
+        f.add(b1);f.add(b2);f.add(b3);f.add(b4);
+
         f.setSize(400, 500);
         f.setLayout(null);
         f.setVisible(true);
     }
 
     public void actionPerformed(ActionEvent e){
-        double c = 0;
-        double a = Double.parseDouble(tf1.getText());
-        double b = Double.parseDouble(tf2.getText());
-        if(e.getSource() == b1){
-            c = a + b;
+        try{
+            double c = 0;
+            double a = Double.parseDouble(tf1.getText());
+            double b = Double.parseDouble(tf2.getText());
+            if(e.getSource() == b1){
+                c = a + b;
+            }
+            else if(e.getSource() == b2){
+                c = a - b;
+            }
+            else if(e.getSource() == b3){
+                c = a*b;
+            }
+            else{
+                c = a/b;
+            }
+            l.setText(String.valueOf(c));
+            w.setText("");
         }
-        else if(e.getSource() == b2){
-            c = a - b;
+        catch(NumberFormatException nf){
+            w.setText("Please type two number to perform Arithmetic operation");
         }
-        else if(e.getSource() == b3){
-            c = a*b;
-        }
-        else{
-            c = a/b;
-        }
-        l.setText(String.valueOf(c));
     }
     public static void main(String args[]){
         new MiniCalculator();
