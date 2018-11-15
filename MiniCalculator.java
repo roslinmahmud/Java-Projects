@@ -1,4 +1,4 @@
-/******** A GUI projects with Swing... [Calculator] */
+/******** A GUI project with Swing... [Calculator] */
 /**
  * author: Roslin Mahmud Joy
  * date: 15-Nov-18
