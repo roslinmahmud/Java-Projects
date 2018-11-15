@@ -1,3 +1,8 @@
+/******** A GUI projects with Swing... [Calculator] */
+/**
+ * author: Roslin Mahmud Joy
+ * date: 15-Nov-18
+ */
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -5,8 +10,8 @@ public class MiniCalculator implements ActionListener{
     JFrame f;
     JTextField tf1, tf2;
     JLabel l;
-    JButton b1, b2;
-    public Main(){
+    JButton b1, b2, b3, b4;
+    public MiniCalculator(){
         f = new JFrame("Mini Calculator");
 
         tf1 = new JTextField();
@@ -27,7 +32,15 @@ public class MiniCalculator implements ActionListener{
         b2.setBounds(200, 200, 100, 50);
         b2.addActionListener(this);
 
-        f.add(tf1);f.add(tf2);f.add(l);f.add(b1);f.add(b2);
+        b3 = new JButton("*");
+        b3.setBounds(100, 250, 100, 50);
+        b3.addActionListener(this);
+        
+        b4 = new JButton("/");
+        b4.setBounds(200, 250, 100, 50);
+        b4.addActionListener(this);
+
+        f.add(tf1);f.add(tf2);f.add(l);f.add(b1);f.add(b2);f.add(b3);f.add(b4);
         f.setSize(400, 500);
         f.setLayout(null);
         f.setVisible(true);
@@ -42,6 +55,12 @@ public class MiniCalculator implements ActionListener{
         }
         else if(e.getSource() == b2){
             c = a - b;
+        }
+        else if(e.getSource() == b3){
+            c = a*b;
+        }
+        else{
+            c = a/b;
         }
         l.setText(String.valueOf(c));
     }
