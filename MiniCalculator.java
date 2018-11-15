@@ -1,5 +1,5 @@
-/******** A GUI project with Swing... [Calculator] */
 /**
+ * name: Mini Calculator - A GUI project with Swing
  * author: Roslin Mahmud Joy
  * date: 15-Nov-18
  */
