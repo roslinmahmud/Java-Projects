@@ -1,3 +1,8 @@
+/**
+ * name: IP Address Finder simple Java GUI Application
+ * author: Roslin Mahmud Joy
+ * date: 16-Nov-18
+ */
 import java.awt.event.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
