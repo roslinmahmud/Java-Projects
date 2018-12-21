@@ -12,4 +12,4 @@
 [Login]: </Login.java>
 [Puzzle Matching]: </PuzzleMatching.java>
 
-## All rights reserved by Roslin Mahmud Joy
+### All rights reserved by Roslin Mahmud Joy
